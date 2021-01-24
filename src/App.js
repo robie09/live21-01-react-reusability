@@ -1,37 +1,17 @@
-import "./App.css";
+//import "./App.css";
+import InstructorTag from "./components/InstructorTag";
+import { AppWrapper, Name, Emoji, Github } from "./styles";
 
 const App = () => {
   return (
-    <div className="AppWrapper">
+    <AppWrapper>
       <h2>When in doubt, ask for help!</h2>
+      <InstructorTag />
+      <Emoji>{$data.Emoji}</Emoji>
+      <Name>{$data.name}</Name>
 
-      <div
-        className="TagWrapper"
-        onClick={() => window.open(`https://github.com/DarthHamza`)}
-      >
-        <span className="Emoji">🌚</span>
-        <span className="Name">Hamza</span>
-        <span className="GoToGithub">Go to GitHub</span>
-      </div>
-
-      <div
-        className="TagWrapper"
-        onClick={() => window.open(`https://github.com/Lailz`)}
-      >
-        <span className="Emoji">🐥</span>
-        <span className="Name">Laila</span>
-        <span className="GoToGithub">Go to GitHub</span>
-      </div>
-
-      <div
-        className="TagWrapper"
-        onClick={() => window.open(`https://github.com/thehasanas`)}
-      >
-        <span className="Emoji">🦍</span>
-        <span className="Name">Hasan</span>
-        <span className="GoToGithub">Go to GitHub</span>
-      </div>
-    </div>
+      <Github>onClick={() => window.open(`${data.Github}`)}</Github>
+    </AppWrapper>
   );
 };
 
