@@ -1,12 +1,14 @@
 import data from "../data";
+import { Emoji, GoToGithub, Name, TagWrapper } from "./styles";
 
-const InstructorTag = () => {
-  // Create the InstructorTag component here
-  const instructor = data.map((data) => {
-    return <InstructorTag key={data.id} data={data} />;
-  });
-
-  return <>{instructor}</>;
+const InstructorTag = ({ github, name, emoji }) => {
+  return (
+    <TagWrapper onClick={() => window.open(`https://github.com/${github}`)}>
+      <Emoji>{emoji}</Emoji>
+      <Name>{name}</Name>
+      <GoToGithub>Go to GitHub</GoToGithub>
+    </TagWrapper>
+  );
 };
 
 export default InstructorTag;
